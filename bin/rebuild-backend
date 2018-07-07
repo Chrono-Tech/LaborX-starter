@@ -1,0 +1,5 @@
+docker build \
+  --tag laborx-profile-backend \
+  --file ./setup/backend/Dockerfile \
+  --build-arg GIT_BRANCH=develop \
+  --no-cache .

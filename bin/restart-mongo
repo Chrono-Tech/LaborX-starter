@@ -1,0 +1,8 @@
+docker rm -f laborx.profile.mongo
+
+docker run \
+  --name laborx.profile.mongo \
+  --network laborx-profile --ip 192.168.13.2 \
+  --restart=always --detach \
+  --mount type=bind,src=/var/data/laborx.profile.mongo/db,dst=/data/db \
+  mongo mongod --auth

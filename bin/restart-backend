@@ -1,0 +1,9 @@
+docker rm -f laborx.profile.backend
+
+docker run \
+  --name laborx.profile.backend \
+  --restart=always --detach \
+  --network laborx-profile --ip 192.168.13.4 \
+  --mount type=bind,src=$(pwd)/setup/backend/config,dst=/data/config \
+  --mount type=bind,src=/var/data/laborx.profile.files,dst=/data/files \
+  laborx-profile-backend

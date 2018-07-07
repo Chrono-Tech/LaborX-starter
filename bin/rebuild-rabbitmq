@@ -1,0 +1,6 @@
+docker rm -f laborx.profile.rabbitmq
+
+docker build \
+  --tag laborx-profile-rabbitmq \
+  --file ./setup/rabbit/Dockerfile \
+  --no-cache .

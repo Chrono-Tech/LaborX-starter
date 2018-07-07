@@ -1,0 +1,24 @@
+{
+  "name": "@laborx/exchange.starter",
+  "version": "1.0.0",
+  "main": "bin/build",
+  "scripts": {
+    "upgrade": "yarn upgrade:mongo; yarn upgrade:rabbitmq; yarn upgrade:backend",
+    "upgrade:backend": "yarn rebuild:backend; yarn restart:backend",
+    "upgrade:mongo": "yarn rebuild:mongo; yarn restart:mongo",
+    "upgrade:rabbitmq": "yarn rebuild:rabbitmq; yarn restart:rabbitmq",
+    "rebuild:backend": "/bin/bash ./bin/rebuild-backend",
+    "rebuild:rabbitmq": "/bin/bash ./bin/rebuild-rabbitmq",
+    "restart:backend": "/bin/bash ./bin/restart-backend",
+    "restart:mongo": "/bin/bash ./bin/restart-mongo",
+    "restart:rabbitmq": "/bin/bash ./bin/restart-rabbitmq",
+    "stop:backend": "/bin/bash ./bin/stop-backend",
+    "stop:rabbitmq": "/bin/bash ./bin/stop-rabbitmq",
+    "stop:mongo": "/bin/bash ./bin/stop-mongo",
+    "clear:mongo": "/bin/bash ./bin/clear-mongo"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "tmp-promise": "^1.0.4"
+  }
+}

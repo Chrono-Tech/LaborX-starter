@@ -1,0 +1,4 @@
+mongo mongodb://192.168.13.2:27017/laborx-profile-backend \
+  --username profile \
+  --password \
+  --eval "db.getCollectionNames().forEach(function(name) { db[name].drop() });"

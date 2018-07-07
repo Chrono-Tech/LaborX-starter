@@ -1,0 +1,9 @@
+docker rm -f laborx.profile.rabbitmq
+
+docker run \
+  --name laborx.profile.rabbitmq \
+  --hostname laborx-profile-rabbitmq \
+  --restart=always --detach \
+  --network laborx-profile --ip 192.168.13.3 \
+  --mount type=bind,src=/var/data/laborx.profile.rabbitmq,dst=/var/lib/rabbitmq \
+  laborx-profile-rabbitmq
